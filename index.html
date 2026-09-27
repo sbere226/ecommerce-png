@@ -1,0 +1,1793 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Ecommerce in PNG</title> 
+ 
+    <style> 
+ 
+        html { 
+            scroll-behavior: smooth; 
+        } 
+ 
+        * { 
+            box-sizing: border-box; 
+        } 
+ 
+        body { 
+            margin: 0; 
+            font-family: Arial, sans-serif; 
+            background: #101625; 
+            color: #e8edf7; 
+        } 
+ 
+        /* HEADER */ 
+        header { 
+            background: #151d31; 
+            padding: 18px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 10; 
+            border-bottom: 1px solid #30394f; 
+        } 
+ 
+        header h3 { 
+            margin: 0; 
+            color: #fca311; 
+            font-size: 20px; 
+            letter-spacing: 0.5px; 
+        } 
+ 
+        nav a { 
+            color: #dce3f2; 
+            text-decoration: none; 
+            margin-left: 25px; 
+            font-size: 14px; 
+            font-weight: bold; 
+        } 
+ 
+        nav a:hover { 
+            color: #fca311; 
+        } 
+ 
+        /* LOGO */ 
+        .brand { 
+            display: flex; 
+            align-items: center; 
+            gap: 14px; 
+        } 
+ 
+        .logo { 
+            width: 100px; 
+            height: 100px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            overflow: hidden; 
+        } 
+ 
+        .logo img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: contain; 
+            display: block; 
+        }
+
+        /* SECOND LOGO */
+        .right-logo {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-left: 20px;
+        }
+
+        .right-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+ 
+        /* HERO */ 
+        .hero { 
+            min-height: 470px; 
+            background-image: url("index.png"); 
+            background-size: cover; 
+            background-position: center; 
+            position: relative; 
+            display: flex; 
+            align-items: center; 
+            padding: 70px 8%; 
+        } 
+ 
+        .hero::before { 
+            content: ""; 
+            position: absolute; 
+            inset: 0; 
+            background: linear-gradient( 
+                90deg, 
+                rgba(10,16,29,.94), 
+                rgba(10,16,29,.68), 
+                rgba(10,16,29,.45) 
+            ); 
+        } 
+ 
+        .hero-content { 
+            position: relative; 
+            z-index: 1; 
+            width: 55%; 
+            order: 2; 
+            margin-left: 55px; 
+        } 
+ 
+        .hero h1 { 
+            font-size: 48px; 
+            line-height: 1.1; 
+            margin: 0 0 18px; 
+            color: white; 
+        } 
+ 
+        .hero p { 
+            font-size: 18px; 
+            line-height: 1.7; 
+            color: #cbd4e5; 
+            max-width: 650px; 
+        } 
+ 
+        .hero-button { 
+            display: inline-block; 
+            margin-top: 15px; 
+            padding: 13px 24px; 
+            background: #fca311; 
+            color: #14213d; 
+            text-decoration: none; 
+            border-radius: 10px; 
+            font-weight: bold; 
+        } 
+ 
+        .hero-button:hover { 
+            background: white; 
+        } 
+ 
+        /* HERO SIDE CARDS */ 
+        .hero-stats { 
+            position: relative; 
+            z-index: 1; 
+            margin-left: 0; 
+            margin-right: auto; 
+            width: 330px; 
+            display: grid; 
+            gap: 14px; 
+            order: -1; 
+        } 
+ 
+        .stat-card { 
+            background: rgba(30, 39, 62, .94); 
+            border: 1px solid #414b64; 
+            border-radius: 18px; 
+            padding: 20px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,.25); 
+        } 
+ 
+        .stat-card small { 
+            color: #aeb9ce; 
+            font-size: 13px; 
+        } 
+ 
+        .stat-card h3 { 
+            margin: 7px 0 4px; 
+            color: white; 
+            font-size: 23px; 
+        } 
+ 
+        .stat-card p { 
+            margin: 0; 
+            color: #aeb9ce; 
+            font-size: 13px; 
+        } 
+ 
+        .orange-dot { 
+            display: inline-block; 
+            width: 10px; 
+            height: 10px; 
+            background: #fca311; 
+            border-radius: 50%; 
+            margin-right: 8px; 
+        } 
+ 
+        /* SECTION TITLE */ 
+        .section-heading { 
+            padding: 55px 8% 20px; 
+        } 
+ 
+        .section-heading h2 { 
+            margin: 0 0 8px; 
+            font-size: 30px; 
+            color: white; 
+        } 
+ 
+        .section-heading p { 
+            margin: 0; 
+            color: #aeb9ce; 
+        } 
+ 
+        /* CARDS */ 
+        .cards { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 20px; 
+            padding: 20px 8% 65px; 
+            background: #101625; 
+        } 
+ 
+        .card { 
+            background: #1e273e; 
+            border: 1px solid #343e56; 
+            border-radius: 18px; 
+            padding: 27px; 
+            min-height: 210px; 
+            box-shadow: 0 8px 20px rgba(0,0,0,.18); 
+            transition: transform .25s, border-color .25s; 
+        } 
+ 
+        .card:hover { 
+            transform: translateY(-5px); 
+            border-color: #fca311; 
+        } 
+ 
+        .card-icon { 
+            width: 45px; 
+            height: 45px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            border-radius: 12px; 
+            background: #29344e; 
+            color: #fca311; 
+            font-size: 22px; 
+            margin-bottom: 18px; 
+        } 
+ 
+        .card h4 { 
+            margin: 0 0 10px; 
+            color: white; 
+            font-size: 19px; 
+        } 
+ 
+        .card p { 
+            color: #aeb9ce; 
+            line-height: 1.6; 
+            font-size: 14px; 
+        } 
+ 
+        .card a { 
+            display: inline-block; 
+            margin-top: 8px; 
+            color: #fca311; 
+            text-decoration: none; 
+            font-size: 13px; 
+            font-weight: bold; 
+        } 
+ 
+        .card a:hover { 
+            color: white; 
+        } 
+ 
+        /* INFORMATION SECTIONS */ 
+        .info { 
+            padding: 70px 8%; 
+            background: #171f33; 
+        } 
+ 
+        .info:nth-of-type(even) { 
+            background: #101625; 
+        } 
+ 
+        .info-container { 
+            max-width: 1150px; 
+            margin: auto; 
+            display: flex; 
+            align-items: center; 
+            gap: 55px; 
+        } 
+ 
+        .info-image { 
+            width: 45%; 
+        } 
+ 
+        .info-image img { 
+            width: 100%; 
+            height: 300px; 
+            object-fit: cover; 
+            border-radius: 20px; 
+            border: 1px solid #3a455e; 
+            box-shadow: 0 12px 25px rgba(0,0,0,.25); 
+            transition: transform .3s; 
+        } 
+ 
+        .info-image img:hover { 
+            transform: scale(1.02); 
+        } 
+ 
+        .info-text { 
+            width: 55%; 
+        } 
+ 
+        .info-text h2 { 
+            color: white; 
+            font-size: 32px; 
+            margin-top: 0; 
+            margin-bottom: 18px; 
+        } 
+ 
+        .info-text h2::after { 
+            content: ""; 
+            display: block; 
+            width: 55px; 
+            height: 4px; 
+            background: #fca311; 
+            margin-top: 12px; 
+            border-radius: 5px; 
+        } 
+ 
+        .info-text p, 
+        .info-text li { 
+            line-height: 1.8; 
+            color: #b8c2d5; 
+        } 
+ 
+        .info-text ul { 
+            padding-left: 20px; 
+        } 
+ 
+        .info-text li::marker { 
+            color: #fca311; 
+        } 
+ 
+        /* TYPE PICTURE CARDS */ 
+        .type-picture-card { 
+            min-height: 400px; 
+        } 
+ 
+        .type-picture-card img { 
+            width: 100%; 
+            height: 180px; 
+            object-fit: cover; 
+            border-radius: 12px; 
+            margin-bottom: 18px; 
+            border: 1px solid #3a455e; 
+        } 
+ 
+        /* ALTERNATE SIDES */ 
+        .reverse .info-image { 
+            order: 2; 
+        } 
+ 
+        .reverse .info-text { 
+            order: 1; 
+        } 
+ 
+        /* FOOTER */ 
+        footer { 
+            background: #0b101d; 
+            color: #9da8bc; 
+            text-align: center; 
+            padding: 28px; 
+            border-top: 1px solid #30394f; 
+        } 
+ 
+        footer strong { 
+            color: #fca311; 
+        } 
+ 
+        /* PAGE CONTENT */ 
+        .page-content { 
+            padding: 65px 8%; 
+            min-height: 70vh; 
+        } 
+ 
+        .page-content .info { 
+            padding: 0; 
+            background: transparent; 
+        } 
+ 
+        .page-title { 
+            margin-bottom: 35px; 
+        } 
+ 
+        .page-title h1 { 
+            font-size: 44px; 
+            margin: 0 0 12px; 
+            color: white; 
+        } 
+ 
+        .page-title p { 
+            color: #aeb9ce; 
+            font-size: 17px; 
+            line-height: 1.7; 
+            max-width: 850px; 
+        } 
+ 
+        .home-link { 
+            display: inline-block; 
+            margin-top: 25px; 
+            padding: 11px 20px; 
+            background: #fca311; 
+            color: #14213d; 
+            text-decoration: none; 
+            border-radius: 10px; 
+            font-weight: bold; 
+        } 
+ 
+        .home-link:hover { 
+            background: white; 
+        } 
+ 
+        /* ONE PAGE NAVIGATION */ 
+        .site-page { 
+            width: 100%; 
+        } 
+ 
+        nav a.active { 
+            color: white; 
+        } 
+ 
+        /* MOBILE */ 
+        @media (max-width: 850px) { 
+ 
+            header { 
+                flex-direction: column; 
+                gap: 15px; 
+                flex-wrap: wrap; 
+            } 
+ 
+            nav { 
+                text-align: center; 
+            } 
+ 
+            .brand { 
+                justify-content: center; 
+            } 
+ 
+            .logo { 
+                width: 55px; 
+                height: 55px; 
+            }
+
+            .right-logo {
+                width: 55px;
+                height: 55px;
+                margin-left: 0;
+            }
+ 
+            nav a { 
+                margin: 6px 9px; 
+            } 
+ 
+            .hero { 
+                flex-direction: column; 
+                align-items: flex-start; 
+                padding: 60px 7%; 
+            } 
+ 
+            .hero-content { 
+                width: 100%; 
+                order: 1; 
+                margin-left: 0; 
+            } 
+ 
+            .hero h1 { 
+                font-size: 36px; 
+            } 
+ 
+            .hero-stats { 
+                width: 100%; 
+                margin-top: 30px; 
+                order: 2; 
+            } 
+ 
+            .cards { 
+                grid-template-columns: 1fr; 
+            } 
+ 
+            .info-container { 
+                flex-direction: column; 
+            } 
+ 
+            .info-image, 
+            .info-text { 
+                width: 100%; 
+            } 
+ 
+            .reverse .info-image, 
+            .reverse .info-text { 
+                order: initial; 
+            } 
+ 
+            .page-content { 
+                padding: 45px 6%; 
+            } 
+ 
+            .page-title h1 { 
+                font-size: 36px; 
+            } 
+ 
+            .type-picture-card img { 
+                height: 220px; 
+            } 
+        } 
+ 
+    </style> 
+</head> 
+ 
+<body> 
+ 
+<header> 
+ 
+    <div class="brand"> 
+ 
+        <div class="logo"> 
+            <img src="mcs.jpg" alt="DWU"> 
+        </div> 
+ 
+        <h3>Department of Mathematics and Computing Science</h3> 
+ 
+    </div> 
+ 
+    <nav> 
+ 
+        <a href="#" onclick="showPage('home'); return false;"> 
+            Home 
+        </a> 
+ 
+        <a href="#" onclick="showPage('introduction'); return false;"> 
+            Introduction 
+        </a> 
+ 
+        <!-- TYPES BEFORE BENEFITS --> 
+        <a href="#" onclick="showPage('types'); return false;"> 
+            Types 
+        </a> 
+ 
+        <a href="#" onclick="showPage('benefits'); return false;"> 
+            Benefits 
+        </a> 
+ 
+        <a href="#" onclick="showPage('trends'); return false;"> 
+            Trends 
+        </a> 
+ 
+        <a href="#" onclick="showPage('challenges'); return false;"> 
+            Challenges 
+        </a> 
+ 
+        <a href="#" onclick="showPage('conclusion'); return false;"> 
+            Conclusion 
+        </a> 
+ 
+    </nav>
+
+    <!-- SECOND LOGO -->
+    <div class="right-logo">
+        <img src="DWU.png" alt="DWU">
+    </div>
+ 
+</header> 
+ 
+ 
+<!-- ========================= 
+     HOME PAGE 
+========================= --> 
+ 
+<section id="page-home" class="site-page" style="display:block;"> 
+ 
+    <section class="hero" id="home"> 
+ 
+        <div class="hero-content"> 
+ 
+            <h1>E-commerce Trends and challenges in Papua New Guinea</h1> 
+ 
+            <p> 
+                Exploring the trends, benefits and challenges 
+                of Electronic Commerce in PNG. 
+            </p> 
+ 
+            <a class="hero-button" 
+               href="#" 
+               onclick="showPage('trends'); return false;"> 
+ 
+                Explore E-commerce 
+ 
+            </a> 
+ 
+        </div> 
+ 
+ 
+        <div class="hero-stats"> 
+ 
+            <div class="stat-card"> 
+ 
+                <small> 
+                    <span class="orange-dot"></span> 
+                    KEY AREA 
+                </small> 
+ 
+                <h3>Online Shopping</h3> 
+ 
+                <p> 
+                    Customers can search for and purchase products 
+                    through digital platforms. 
+                </p> 
+ 
+            </div> 
+ 
+ 
+            <div class="stat-card"> 
+ 
+                <small> 
+                    <span class="orange-dot"></span> 
+                    GROWING TREND 
+                </small> 
+ 
+                <h3>Digital Payments</h3> 
+ 
+                <p> 
+                    Electronic payment methods support online transactions. 
+                </p> 
+ 
+            </div> 
+ 
+ 
+            <div class="stat-card"> 
+ 
+                <small> 
+                    <span class="orange-dot"></span> 
+                    BUSINESS TOOL 
+                </small> 
+ 
+                <h3>Social Media</h3> 
+ 
+                <p> 
+                    Businesses can promote products and communicate 
+                    with customers online. 
+                </p> 
+ 
+            </div> 
+ 
+        </div> 
+ 
+    </section> 
+ 
+ 
+    <div class="section-heading"> 
+ 
+        <h2>Explore E-commerce in PNG</h2> 
+ 
+        <p> 
+            Select a topic to open its own page. 
+        </p> 
+ 
+    </div> 
+ 
+ 
+    <div class="cards"> 
+ 
+        <!-- INTRODUCTION --> 
+ 
+        <div class="card"> 
+ 
+            <div class="card-icon">⌂</div> 
+ 
+            <h4>Introduction</h4> 
+ 
+            <p> 
+                Learn about e-commerce and its development 
+                in Papua New Guinea. 
+            </p> 
+ 
+            <a href="#" 
+               onclick="showPage('introduction'); return false;"> 
+ 
+                Open Page → 
+ 
+            </a> 
+ 
+        </div> 
+ 
+ 
+        <!-- TYPES BEFORE BENEFITS --> 
+ 
+        <div class="card"> 
+ 
+            <div class="card-icon">B</div> 
+ 
+            <h4>Types</h4> 
+ 
+            <p> 
+                Learn about the different types of 
+                e-commerce transactions. 
+            </p> 
+ 
+            <a href="#" 
+               onclick="showPage('types'); return false;"> 
+ 
+                Open Page → 
+ 
+            </a> 
+ 
+        </div> 
+ 
+ 
+        <!-- BENEFITS --> 
+ 
+        <div class="card"> 
+ 
+            <div class="card-icon">↗</div> 
+ 
+            <h4>Benefits</h4> 
+ 
+            <p> 
+                Explore the benefits of e-commerce 
+                for customers and businesses. 
+            </p> 
+ 
+            <a href="#" 
+               onclick="showPage('benefits'); return false;"> 
+ 
+                Open Page → 
+ 
+            </a> 
+ 
+        </div> 
+ 
+ 
+        <!-- TRENDS --> 
+ 
+        <div class="card"> 
+ 
+            <div class="card-icon">★</div> 
+ 
+            <h4>Trends</h4> 
+ 
+            <p> 
+                Explore online shopping, digital payments 
+                and social media. 
+            </p> 
+ 
+            <a href="#" 
+               onclick="showPage('trends'); return false;"> 
+ 
+                Open Page → 
+ 
+            </a> 
+ 
+        </div> 
+ 
+ 
+        <!-- CHALLENGES --> 
+ 
+        <div class="card"> 
+ 
+            <div class="card-icon">!</div> 
+ 
+            <h4>Challenges</h4> 
+ 
+            <p> 
+                Learn about the challenges affecting 
+                e-commerce in PNG. 
+            </p> 
+ 
+            <a href="#" 
+               onclick="showPage('challenges'); return false;"> 
+ 
+                Open Page → 
+ 
+            </a> 
+ 
+        </div> 
+ 
+ 
+        <!-- CONCLUSION --> 
+ 
+        <div class="card"> 
+ 
+            <div class="card-icon">✓</div> 
+ 
+            <h4>Conclusion</h4> 
+ 
+            <p> 
+                View the main points and overall conclusion 
+                of the topic. 
+            </p> 
+ 
+            <a href="#" 
+               onclick="showPage('conclusion'); return false;"> 
+ 
+                Open Page → 
+ 
+            </a> 
+ 
+        </div> 
+ 
+    </div> 
+ 
+</section> 
+ 
+ 
+<!-- ========================= 
+     INTRODUCTION PAGE 
+========================= --> 
+ 
+<section id="page-introduction" 
+         class="site-page" 
+         style="display:none;"> 
+ 
+    <main class="page-content"> 
+ 
+        <div class="page-title"> 
+ 
+            <h1>Introduction</h1> 
+ 
+            <p> 
+                Introduction to E-commerce in Papua New Guinea. 
+            </p> 
+ 
+        </div> 
+ 
+ 
+        <section class="info"> 
+ 
+            <div class="info-container"> 
+ 
+                <div class="info-image"> 
+ 
+                    <img src="introduction.jpg" 
+                         alt="E-commerce in Papua New Guinea"> 
+ 
+                </div> 
+ 
+ 
+                <div class="info-text"> 
+ 
+                    <h2>What is E-commerce?</h2> 
+ 
+                    <p> 
+                        E-commerce is the buying and selling of products 
+                        and services through digital platforms. 
+                    </p> 
+ 
+                    <p> 
+                        In Papua New Guinea, online platforms can provide 
+                        businesses and customers with new ways to communicate, 
+                        promote products and complete transactions. 
+                    </p> 
+ 
+                    <p> 
+                        The growth of digital platforms, online shopping 
+                        and electronic payments is helping to shape the 
+                        development of e-commerce in PNG. 
+                    </p> 
+ 
+                </div> 
+ 
+            </div> 
+ 
+        </section> 
+ 
+ 
+        <a class="home-link" 
+           href="#" 
+           onclick="showPage('home'); return false;"> 
+ 
+            ← Home 
+ 
+        </a> 
+ 
+    </main> 
+ 
+</section> 
+ 
+ 
+<!-- ========================= 
+     TYPES PAGE 
+========================= --> 
+ 
+<section id="page-types" 
+         class="site-page" 
+         style="display:none;"> 
+ 
+    <main class="page-content"> 
+ 
+        <div class="page-title"> 
+ 
+            <h1>Types of E-commerce</h1> 
+ 
+            <p> 
+                Different types of e-commerce describe 
+                who is buying and who is selling. 
+            </p> 
+ 
+        </div> 
+ 
+ 
+        <div class="cards"> 
+ 
+            <!-- B2B --> 
+ 
+            <div class="card type-picture-card"> 
+ 
+                <img src="b2b.jpg" 
+                     alt="Business to Business"> 
+ 
+                <div class="card-icon"> 
+                    B2B 
+                </div> 
+ 
+                <h4> 
+                    B2B - Business to Business 
+                </h4> 
+ 
+                <p> 
+                    B2B e-commerce involves transactions 
+                    between one business and another business. 
+                </p> 
+ 
+                <p> 
+                    For example, a business may purchase 
+                    products or services from another company 
+                    through an online platform. 
+                </p> 
+ 
+            </div> 
+ 
+ 
+            <!-- B2C --> 
+ 
+            <div class="card type-picture-card"> 
+ 
+                <img src="b2c.jpg" 
+                     alt="Business to Consumer"> 
+ 
+                <div class="card-icon"> 
+                    B2C 
+                </div> 
+ 
+                <h4> 
+                    B2C - Business to Consumer 
+                </h4> 
+ 
+                <p> 
+                    B2C e-commerce involves businesses selling 
+                    products or services directly to customers. 
+                </p> 
+ 
+                <p> 
+                    Online stores are an example of 
+                    business-to-consumer e-commerce. 
+                </p> 
+ 
+            </div> 
+ 
+ 
+            <!-- C2C --> 
+ 
+            <div class="card type-picture-card"> 
+ 
+                <img src="c2c.png" 
+                     alt="Consumer to Consumer"> 
+ 
+                <div class="card-icon"> 
+                    C2C 
+                </div> 
+ 
+                <h4> 
+                    C2C - Consumer to Consumer 
+                </h4> 
+ 
+                <p> 
+                    C2C e-commerce involves one consumer 
+                    selling products or services to another consumer. 
+                </p> 
+ 
+                <p> 
+                    Online marketplaces can allow consumers 
+                    to communicate and trade with each other. 
+                </p> 
+ 
+            </div> 
+ 
+ 
+            <!-- C2B --> 
+ 
+            <div class="card type-picture-card"> 
+ 
+                <img src="c2b.jpg" 
+                     alt="Consumer to Business"> 
+ 
+                <div class="card-icon"> 
+                    C2B 
+                </div> 
+ 
+                <h4> 
+                    C2B - Consumer to Business 
+                </h4> 
+ 
+                <p> 
+                    C2B e-commerce occurs when an individual 
+                    provides products or services to a business. 
+                </p> 
+ 
+                <p> 
+                    For example, an individual may offer 
+                    digital services to a company. 
+                </p> 
+ 
+            </div> 
+ 
+        </div> 
+ 
+ 
+        <a class="home-link" 
+           href="#" 
+           onclick="showPage('home'); return false;"> 
+ 
+            ← Home 
+ 
+        </a> 
+ 
+    </main> 
+ 
+</section> 
+ 
+ 
+<!-- ========================= 
+     BENEFITS PAGE 
+========================= --> 
+ 
+<section id="page-benefits" 
+         class="site-page" 
+         style="display:none;"> 
+ 
+    <main class="page-content"> 
+ 
+        <div class="page-title"> 
+ 
+            <h1>Benefits</h1> 
+ 
+            <p> 
+                How e-commerce can support customers 
+                and businesses in Papua New Guinea. 
+            </p> 
+ 
+        </div> 
+ 
+ 
+        <section class="info"> 
+ 
+            <div class="info-container"> 
+ 
+                <div class="info-image"> 
+ 
+                    <img src="benefits.png" 
+                         alt="Benefits of E-commerce"> 
+ 
+                </div> 
+ 
+ 
+                <div class="info-text"> 
+ 
+                    <h2>Benefits of E-commerce</h2> 
+ 
+                    <p> 
+                        E-commerce provides businesses and customers 
+                        with convenient ways to buy and sell products 
+                        and services. 
+                    </p> 
+ 
+                    <p> 
+                        Businesses can reach a wider market, communicate 
+                        with customers more easily and potentially reduce 
+                        some operating costs. 
+                    </p> 
+ 
+                    <ul> 
+ 
+                        <li>Wider customer reach</li> 
+ 
+                        <li>Convenient shopping</li> 
+ 
+                        <li>Business growth opportunities</li> 
+ 
+                    </ul> 
+ 
+                </div> 
+ 
+            </div> 
+ 
+        </section> 
+ 
+ 
+        <!-- BENEFIT 1 --> 
+ 
+        <section class="info reverse"> 
+ 
+            <div class="info-container"> 
+ 
+                <div class="info-image"> 
+ 
+                    <img src="customer.jpg" 
+                         alt="Wider Customer Reach"> 
+ 
+                </div> 
+ 
+ 
+                <div class="info-text"> 
+ 
+                    <h2>Wider Customer Reach</h2> 
+ 
+                    <p> 
+                        E-commerce can allow businesses to reach 
+                        customers outside their immediate physical 
+                        location. 
+                    </p> 
+ 
+                </div> 
+ 
+            </div> 
+ 
+        </section> 
+ 
+ 
+        <!-- BENEFIT 2 --> 
+ 
+        <section class="info"> 
+ 
+            <div class="info-container"> 
+ 
+                <div class="info-image"> 
+ 
+                    <img src="search.jpg" 
+                         alt="Convenient Shopping"> 
+ 
+                </div> 
+ 
+ 
+                <div class="info-text"> 
+ 
+                    <h2>Convenient Shopping</h2> 
+ 
+                    <p> 
+                        Customers can search for products and 
+                        communicate with sellers through digital 
+                        platforms. 
+                    </p> 
+ 
+                </div> 
+ 
+            </div> 
+ 
+        </section> 
+ 
+ 
+        <!-- BENEFIT 3 --> 
+ 
+        <section class="info reverse"> 
+ 
+            <div class="info-container"> 
+ 
+                <div class="info-image"> 
+ 
+                    <img src="growth.jpg" 
+                         alt="Business Growth"> 
+ 
+                </div> 
+ 
+ 
+                <div class="info-text"> 
+ 
+                    <h2>Business Growth Opportunities</h2> 
+ 
+                    <p> 
+                        Digital platforms can help businesses 
+                        promote products and communicate with 
+                        potential customers. 
+                    </p> 
+ 
+                </div> 
+ 
+            </div> 
+ 
+        </section> 
+ 
+ 
+        <a class="home-link" 
+           href="#" 
+           onclick="showPage('home'); return false;"> 
+ 
+            ← Home 
+ 
+        </a> 
+ 
+    </main> 
+ 
+</section> 
+ 
+ 
+<!-- ========================= 
+     TRENDS PAGE 
+========================= --> 
+ 
+<section id="page-trends" 
+         class="site-page" 
+         style="display:none;"> 
+ 
+    <main class="page-content"> 
+ 
+        <div class="page-title"> 
+ 
+            <h1>Trends</h1> 
+ 
+            <p> 
+                Key trends influencing online buying 
+                and selling in PNG. 
+            </p> 
+ 
+        </div> 
+ 
+ 
+        <!-- ONLINE SHOPPING --> 
+ 
+        <section class="info reverse"> 
+ 
+            <div class="info-container"> 
+ 
+                <div class="info-image"> 
+ 
+                    <img src="online.jpg" 
+                         alt="Online Shopping"> 
+ 
+                </div> 
+ 
+ 
+                <div class="info-text"> 
+ 
+                    <h2>Online Shopping</h2> 
+ 
+                    <p> 
+                        Online shopping allows customers to search 
+                        for products and services using digital platforms. 
+                    </p> 
+ 
+                    <p> 
+                        Customers can communicate with sellers and place 
+                        orders without always needing to visit a physical store. 
+                    </p> 
+ 
+                    <ul> 
+ 
+                        <li>Search for products online</li> 
+ 
+                        <li>Communicate with sellers</li> 
+ 
+                        <li>Place orders digitally</li> 
+ 
+                    </ul> 
+ 
+                </div> 
+ 
+            </div> 
+ 
+        </section> 
+ 
+ 
+        <!-- DIGITAL PAYMENTS --> 
+ 
+        <section class="info"> 
+ 
+            <div class="info-container"> 
+ 
+                <div class="info-image"> 
+ 
+                    <img src="image.jpg" 
+                         alt="Digital Payments"> 
+ 
+                </div> 
+ 
+ 
+                <div class="info-text"> 
+ 
+                    <h2>Digital Payments</h2> 
+ 
+                    <p> 
+                        Digital payments allow customers and businesses 
+                        to complete transactions electronically. 
+                    </p> 
+ 
+                    <p> 
+                        Electronic payment methods can support 
+                        convenient online transactions. 
+                    </p> 
+ 
+                    <ul> 
+ 
+                        <li>Electronic transactions</li> 
+ 
+                        <li>Faster payments</li> 
+ 
+                        <li>Convenient payment methods</li> 
+ 
+                    </ul> 
+ 
+                </div> 
+ 
+            </div> 
+ 
+        </section> 
+ 
+ 
+        <!-- SOCIAL MEDIA --> 
+ 
+        <section class="info reverse"> 
+ 
+            <div class="info-container"> 
+ 
+                <div class="info-image"> 
+ 
+                    <img src="social.jpg" 
+                         alt="Social Media"> 
+ 
+                </div> 
+ 
+ 
+                <div class="info-text"> 
+ 
+                    <h2>Social Media</h2> 
+ 
+                    <p> 
+                        Social media is increasingly used by businesses 
+                        to advertise products and communicate with customers. 
+                    </p> 
+ 
+                    <p> 
+                        Businesses can use social media platforms to display 
+                        products and reach potential customers. 
+                    </p> 
+ 
+                    <ul> 
+ 
+                        <li>Product promotion</li> 
+ 
+                        <li>Customer communication</li> 
+ 
+                        <li>Online advertising</li> 
+ 
+                    </ul> 
+ 
+                </div> 
+ 
+            </div> 
+ 
+        </section> 
+ 
+ 
+        <!-- MOBILE COMMERCE --> 
+ 
+        <section class="info"> 
+ 
+            <div class="info-container"> 
+ 
+                <div class="info-image"> 
+ 
+                    <img src="commerce.jpg" 
+                         alt="Mobile Commerce"> 
+ 
+                </div> 
+ 
+ 
+                <div class="info-text"> 
+ 
+                    <h2>Mobile Commerce</h2> 
+ 
+                    <p> 
+                        Mobile commerce allows customers to browse, 
+                        purchase products and communicate with businesses 
+                        using mobile devices such as smartphones. 
+                    </p> 
+ 
+                    <p> 
+                        Mobile devices are becoming an important way 
+                        for customers to access online shopping services. 
+                    </p> 
+ 
+                    <ul> 
+ 
+                        <li>Shopping using smartphones</li> 
+ 
+                        <li>Mobile access to online stores</li> 
+ 
+                        <li>Convenient digital transactions</li> 
+ 
+                    </ul> 
+ 
+                </div> 
+ 
+            </div> 
+ 
+        </section> 
+ 
+ 
+        <a class="home-link" 
+           href="#" 
+           onclick="showPage('home'); return false;"> 
+ 
+            ← Home 
+ 
+        </a> 
+ 
+    </main> 
+ 
+</section> 
+ 
+ 
+<!-- ========================= 
+     CHALLENGES PAGE 
+========================= --> 
+ 
+<section id="page-challenges" 
+         class="site-page" 
+         style="display:none;"> 
+ 
+    <main class="page-content"> 
+ 
+        <div class="page-title"> 
+ 
+            <h1>Challenges</h1> 
+ 
+            <p> 
+                Some of the main challenges affecting 
+                e-commerce in Papua New Guinea. 
+            </p> 
+ 
+        </div> 
+ 
+ 
+        <!-- CHALLENGES --> 
+ 
+        <section class="info"> 
+ 
+            <div class="info-container"> 
+ 
+                <div class="info-image"> 
+ 
+                    <img src="challenges.jpg" 
+                         alt="E-commerce Challenges"> 
+ 
+                </div> 
+ 
+ 
+                <div class="info-text"> 
+ 
+                    <h2>Challenges of E-commerce</h2> 
+ 
+                    <p> 
+                        E-commerce in Papua New Guinea faces several 
+                        challenges, including limited internet access, 
+                        cybersecurity concerns and digital skills gaps. 
+                    </p> 
+ 
+                    <ul> 
+ 
+                        <li>Limited internet access</li> 
+ 
+                        <li>Cybersecurity concerns</li> 
+ 
+                        <li>Digital skills gaps</li> 
+ 
+                    </ul> 
+ 
+                </div> 
+ 
+            </div> 
+ 
+        </section> 
+ 
+ 
+        <!-- DELIVERY --> 
+ 
+        <section class="info reverse"> 
+ 
+            <div class="info-container"> 
+ 
+                <div class="info-image"> 
+ 
+                    <img src="deliveries.jpg" 
+                         alt="Delivery"> 
+ 
+                </div> 
+ 
+ 
+                <div class="info-text"> 
+ 
+                    <h2>Delivery Challenges</h2> 
+ 
+                    <p> 
+                        Delivery can be challenging because of 
+                        transportation costs, distance and 
+                        infrastructure limitations. 
+                    </p> 
+ 
+                    <p> 
+                        These factors can affect how quickly products 
+                        reach customers in different parts of 
+                        Papua New Guinea. 
+                    </p> 
+ 
+                    <ul> 
+ 
+                        <li>Transportation costs</li> 
+ 
+                        <li>Long distances</li> 
+ 
+                        <li>Infrastructure limitations</li> 
+ 
+                    </ul> 
+ 
+                </div> 
+ 
+            </div> 
+ 
+        </section> 
+ 
+ 
+        <!-- PAYMENT BARRIERS --> 
+ 
+        <section class="info"> 
+ 
+            <div class="info-container"> 
+ 
+                <div class="info-image"> 
+ 
+                    <img src="payment.jpg" 
+                         alt="Payment Barriers"> 
+ 
+                </div> 
+ 
+ 
+                <div class="info-text"> 
+ 
+                    <h2>Payment Barriers</h2> 
+ 
+                    <p> 
+                        Some customers may have limited access 
+                        to digital payment services, which can 
+                        make online transactions more difficult. 
+                    </p> 
+ 
+                    <p> 
+                        Limited payment options can affect the 
+                        ability of customers and businesses to 
+                        complete online purchases. 
+                    </p> 
+ 
+                    <ul> 
+ 
+                        <li>Limited payment options</li> 
+ 
+                        <li>Access to digital payment services</li> 
+ 
+                        <li>Transaction difficulties</li> 
+ 
+                    </ul> 
+ 
+                </div> 
+ 
+            </div> 
+ 
+        </section> 
+ 
+ 
+        <!-- DIGITAL SKILLS --> 
+ 
+        <section class="info reverse"> 
+ 
+            <div class="info-container"> 
+ 
+                <div class="info-image"> 
+ 
+                    <img src="digital.jpg" 
+                         alt="Digital Skills"> 
+ 
+                </div> 
+ 
+ 
+                <div class="info-text"> 
+ 
+                    <h2>Digital Skills</h2> 
+ 
+                    <p> 
+                        Digital skills are important for customers 
+                        and businesses using e-commerce platforms. 
+                    </p> 
+ 
+                    <p> 
+                        A lack of digital skills can make it harder 
+                        for people to use online services effectively. 
+                    </p> 
+ 
+                    <ul> 
+ 
+                        <li>Limited digital knowledge</li> 
+ 
+                        <li>Difficulty using online platforms</li> 
+ 
+                        <li>Need for digital training</li> 
+ 
+                    </ul> 
+ 
+                </div> 
+ 
+            </div> 
+ 
+        </section> 
+ 
+ 
+        <a class="home-link" 
+           href="#" 
+           onclick="showPage('home'); return false;"> 
+ 
+            ← Home 
+ 
+        </a> 
+ 
+    </main> 
+ 
+</section> 
+ 
+ 
+<!-- ========================= 
+     CONCLUSION PAGE 
+========================= --> 
+ 
+<section id="page-conclusion" 
+         class="site-page" 
+         style="display:none;"> 
+ 
+    <main class="page-content"> 
+ 
+        <div class="page-title"> 
+ 
+            <h1>Conclusion</h1> 
+ 
+            <p> 
+                Overall view of e-commerce in Papua New Guinea. 
+            </p> 
+ 
+        </div> 
+ 
+ 
+        <section class="info"> 
+ 
+            <div class="info-container"> 
+ 
+                <div class="info-image"> 
+ 
+                    <img src="conclusion.jpg" 
+                         alt="E-commerce Conclusion"> 
+ 
+                </div> 
+ 
+ 
+                <div class="info-text"> 
+ 
+                    <h2>Conclusion</h2> 
+ 
+                    <p> 
+                        E-commerce provides opportunities for businesses 
+                        and customers in Papua New Guinea through online 
+                        shopping, digital payments and social media. 
+                    </p> 
+ 
+                    <p> 
+                        It can help businesses reach customers beyond 
+                        their physical locations and provide convenient 
+                        ways to promote and sell products. 
+                    </p> 
+ 
+                    <p> 
+                        At the same time, challenges such as limited 
+                        internet access, cybersecurity concerns, digital 
+                        skills gaps and delivery difficulties can affect 
+                        online business. 
+                    </p> 
+ 
+                    <p> 
+                        Continued improvement in digital access, skills 
+                        and supporting infrastructure can help the 
+                        e-commerce environment develop further. 
+                    </p> 
+ 
+                </div> 
+ 
+            </div> 
+ 
+        </section> 
+ 
+ 
+        <a class="home-link" 
+           href="#" 
+           onclick="showPage('home'); return false;"> 
+ 
+            ← Home 
+ 
+        </a> 
+ 
+    </main> 
+ 
+</section> 
+ 
+ 
+<!-- ========================= 
+     FOOTER 
+========================= --> 
+ 
+<footer> 
+ 
+    <p> 
+        <strong>E-commerce Project</strong> 
+        | Papua New Guinea 
+    </p> 
+ 
+</footer> 
+ 
+ 
+<!-- ========================= 
+     JAVASCRIPT 
+========================= --> 
+ 
+<script> 
+ 
+function showPage(pageName) { 
+ 
+    const pages = 
+        document.querySelectorAll(".site-page"); 
+ 
+ 
+    pages.forEach(function(page) { 
+ 
+        page.style.display = "none"; 
+ 
+    }); 
+ 
+ 
+    const selectedPage = 
+        document.getElementById("page-" + pageName); 
+ 
+ 
+    if (selectedPage) { 
+ 
+        selectedPage.style.display = "block"; 
+ 
+    } 
+ 
+    window.scrollTo({ 
+ 
+        top: 0, 
+ 
+        behavior: "smooth" 
+ 
+    }); 
+ 
+} 
+ 
+</script> 
+ 
+ 
+</body> 
+</html>
